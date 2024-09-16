@@ -31,11 +31,12 @@ namespace ProductApps
         {
             try
             {
-                cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
+                cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text)); 
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);                
-                totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment +25.00m); //added delivery fee
-                wrapChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25.00m + 5.00m); //added wrap fee
+                totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment +25m); //added delivery fee
+                wrapChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25m + 5m); //added wrap fee
+                gstTextBlock.Text = Convert.ToString(Convert.ToDouble(cProduct.TotalPayment + 25m + 5m)*1.1); //added GST, string to double
             }
             catch (FormatException)
             {

@@ -27,7 +27,7 @@ namespace ProductApps
             set { quantity = value; }
         }
 
-        public decimal TotalPayment
+        public decimal TotalPayment 
         {
             get { return totalPayment; }
             set { totalPayment = value; }
